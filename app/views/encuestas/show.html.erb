@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @encuesta.nombre %>
+</p>
+
+<p>
+  <b>Fecha inicio:</b>
+  <%= @encuesta.fecha_inicio %>
+</p>
+
+<p>
+  <b>Fecha fin:</b>
+  <%= @encuesta.fecha_fin %>
+</p>
+
+
+<%= link_to 'Edit', edit_encuesta_path(@encuesta) %> |
+<%= link_to 'Back', encuestas_path %>

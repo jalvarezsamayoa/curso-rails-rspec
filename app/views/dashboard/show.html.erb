@@ -1,0 +1,18 @@
+<%= render :partial => 'shared/top_menu'  %>
+
+<% if current_usuario.has_role? :administrador %>
+<ul>
+  <li><%= link_to 'Administrar Usuarios', "#" %></li>
+  <li><%= link_to 'Administrar Encuestas', "#" %></li>
+  <li><%= link_to 'Administrar Roles', "#" %></li>
+  <li><%= link_to 'Administrar Rutas', "#" %></li>
+  <li><%= link_to 'Asignar clientes a rutas', "#" %></li>
+  <li><%= link_to 'Asignacion de articulos', "#" %></li>
+  <li><%= link_to 'Asignacion de rutas a usuarios', "#" %></li>
+</ul>
+<% else %>
+<ul>
+  <li><%= link_to 'Toma de Encuestas', "#" %></li>
+</ul>
+<% end -%>
+

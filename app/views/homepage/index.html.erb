@@ -1,0 +1,8 @@
+<h1>Super Encuestas</h1>
+<ul>
+  <% if usuario_signed_in? %>
+  <li><%= link_to "Salir", destroy_usuario_session_path, :method => :delete  %></li>
+  <% else %>
+  <li><%= link_to "Ingresar", new_usuario_session_path %></li>
+  <% end -%>
+</ul>

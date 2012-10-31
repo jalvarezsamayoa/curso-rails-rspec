@@ -1,0 +1,27 @@
+<h1>Listing encuestas</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Fecha inicio</th>
+    <th>Fecha fin</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @encuestas.each do |encuesta| %>
+  <tr>
+    <td><%= encuesta.nombre %></td>
+    <td><%= encuesta.fecha_inicio %></td>
+    <td><%= encuesta.fecha_fin %></td>
+    <td><%= link_to 'Show', encuesta %></td>
+    <td><%= link_to 'Edit', edit_encuesta_path(encuesta) %></td>
+    <td><%= link_to 'Destroy', encuesta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva Encuesta', new_encuesta_path %>

@@ -1,0 +1,33 @@
+<%= form_for(@encuesta) do |f| %>
+  <% if @encuesta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@encuesta.errors.count, "error") %>
+        <%= t("textos.no_se_pudo_grabar") %></h2>
+
+      <ul>
+      <% @encuesta.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_inicio %><br />
+    <%#= f.text_field :fecha_inicio %>
+    <%= f.date_select :fecha_inicio %>
+
+  </div>
+  <div class="field">
+    <%= f.label :fecha_fin %><br />
+    <%#= f.text_field :fecha_fin %>
+    <%= f.date_select :fecha_fin %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
