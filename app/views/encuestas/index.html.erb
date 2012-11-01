@@ -15,9 +15,9 @@
     <td><%= encuesta.nombre %></td>
     <td><%= encuesta.fecha_inicio %></td>
     <td><%= encuesta.fecha_fin %></td>
-    <td><%= link_to 'Show', encuesta %></td>
-    <td><%= link_to 'Edit', edit_encuesta_path(encuesta) %></td>
-    <td><%= link_to 'Destroy', encuesta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Mostrar', encuesta %></td>
+    <td><%= link_to 'Editar', edit_encuesta_path(encuesta) %></td>
+    <td><%= link_to 'Eliminar', encuesta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

@@ -1,0 +1,10 @@
+<!-- _form.html.erb -->
+
+
+<%= simple_form_for @ruta do |f| %>
+  <%= f.input :nombre %>
+  <%= f.input :fecha_inicio %>
+  <%= f.input :fecha_final %>
+
+  <%= f.button :submit %>
+<% end %>

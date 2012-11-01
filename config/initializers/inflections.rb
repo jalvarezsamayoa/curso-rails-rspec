@@ -16,4 +16,5 @@
 
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'encuesta', 'encuestas'
+  inflect.irregular 'ruta', 'rutas'
 end

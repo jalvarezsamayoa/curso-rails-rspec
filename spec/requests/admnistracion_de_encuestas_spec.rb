@@ -74,11 +74,45 @@ describe "Administracion de Encuestas:" do
     end
 
     it "puedo editar una encuesta existente" do
-      pending
+      @encuesta =  Encuesta.create(:nombre => "Encuesta No. 1",
+        :fecha_inicio => Date.today,
+        :fecha_fin => Date.today + 6.weeks)
+
+      ir_a_pagina_de_encuestas
+
+      click_link('Editar')
+      current_path.should == edit_encuesta_path(@encuesta)
+
+      fill_in 'Nombre de Encuesta', :with => "Encuesta No. 2"
+
+      select('2012', :from => 'encuesta_fecha_inicio_1i')
+      select('octubre', :from => 'encuesta_fecha_inicio_2i')
+      select('30', :from => 'encuesta_fecha_inicio_3i')
+
+      select('2012', :from => 'encuesta_fecha_fin_1i')
+      select('octubre', :from => 'encuesta_fecha_fin_2i')
+      select('30', :from => 'encuesta_fecha_fin_3i')
+
+      click_button 'Actualizar Encuesta'
+
+      page.should have_content('Cambios grabados con exito.')
+
+      visit encuestas_path
+      page.should have_content('Encuesta No. 2')
     end
 
     it "puedo eliminar una encuesta existente" do
-     pending
+      @encuesta =  Encuesta.create(:nombre => "Encuesta No. 1",
+        :fecha_inicio => Date.today,
+        :fecha_fin => Date.today + 6.weeks)
+
+      ir_a_pagina_de_encuestas
+
+      click_link('Eliminar')
+
+      page.should have_content('Encuesta eliminada con exito.')
+      page.should_not have_content('Encuesta No. 1')
+
     end
 
 

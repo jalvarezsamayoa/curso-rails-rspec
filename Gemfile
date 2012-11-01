@@ -24,6 +24,8 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem "rolify"
+gem 'simple_form'
+gem 'inherited_resources'
 
 group :development, :test do
   gem "rspec-rails", "~> 2.0"
@@ -33,6 +35,7 @@ group :development, :test do
   gem "guard"
   gem 'guard-rspec'
   gem 'guard-bundler'
+  gem 'guard-rails'
   gem 'rb-inotify', '~> 0.8.8'
 
 end

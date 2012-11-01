@@ -1,5 +1,6 @@
 Encuestas::Application.routes.draw do
 
+  resources :rutas
   resources :encuestas
 
   get "dashboard/show"

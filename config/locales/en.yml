@@ -208,10 +208,15 @@ en:
       <<: *errors
     models:
       encuesta: "Encuesta"
+      ruta: "Ruta"
     attributes:
       encuesta:
         nombre: "Nombre de Encuesta"
         fecha_inicio: "Fecha publicacion"
         fecha_fin: "Fecha caducidad"
+      ruta:
+        nombre: "Nombre de Ruta"
+        fecha_inicio: "Fecha publicacion"
+        fecha_final: "Fecha caducidad"
   textos:
     no_se_pudo_grabar: "error no dejo que esto se grabara:"
