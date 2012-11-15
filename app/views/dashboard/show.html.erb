@@ -3,7 +3,7 @@
 <% if current_usuario.has_role? :administrador %>
 <ul>
   <li><%= link_to 'Administrar Usuarios', "#" %></li>
-  <li><%= link_to 'Administrar Encuestas', "#" %></li>
+  <li><%= link_to 'Administrar Encuestas', encuestas_path %></li>
   <li><%= link_to 'Administrar Roles', "#" %></li>
   <li><%= link_to 'Administrar Rutas', "#" %></li>
   <li><%= link_to 'Asignar clientes a rutas', "#" %></li>

@@ -26,6 +26,7 @@ gem 'devise'
 gem "rolify"
 gem 'simple_form'
 gem 'inherited_resources'
+gem 'factory_girl_rails'
 
 group :development, :test do
   gem "rspec-rails", "~> 2.0"

@@ -1,6 +1,8 @@
 class RutasController < InheritedResources::Base
   before_filter :authenticate_usuario!
-   actions :all, :except => [ :show ]
+  before_filter :verificar_role_administrador!
+
+  actions :all, :except => [ :show ]
 
   def create
     create!(:notice => 'Cambios grabados con exito.')
@@ -13,4 +15,5 @@ class RutasController < InheritedResources::Base
   def destroy
     destroy!(:notice => 'Ruta eliminada con exito.')
   end
+
 end

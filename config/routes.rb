@@ -1,7 +1,18 @@
 Encuestas::Application.routes.draw do
 
   resources :rutas
-  resources :encuestas
+
+  resources :encuestas do
+    resources :preguntas
+
+    resources :rutas
+  end
+
+  # /encuestas
+  # /encuesta/edit/2
+
+  # /encuesta/123/preguntas
+
 
   get "dashboard/show"
 

@@ -1,5 +1,6 @@
 class EncuestasController < InheritedResources::Base
   before_filter :authenticate_usuario!
+   before_filter :verificar_role_administrador!
      actions :all, :except => [ :show ]
 
   # GET /encuestas

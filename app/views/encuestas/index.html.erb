@@ -5,7 +5,7 @@
     <th>Nombre</th>
     <th>Fecha inicio</th>
     <th>Fecha fin</th>
-    <th></th>
+    <th>Preguntas</th>
     <th></th>
     <th></th>
   </tr>
@@ -15,7 +15,7 @@
     <td><%= encuesta.nombre %></td>
     <td><%= encuesta.fecha_inicio %></td>
     <td><%= encuesta.fecha_fin %></td>
-    <td><%= link_to 'Mostrar', encuesta %></td>
+    <td><%= link_to 'Preguntas', encuesta_preguntas_path(encuesta) %></td>
     <td><%= link_to 'Editar', edit_encuesta_path(encuesta) %></td>
     <td><%= link_to 'Eliminar', encuesta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

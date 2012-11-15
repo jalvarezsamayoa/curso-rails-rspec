@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121031235650) do
+ActiveRecord::Schema.define(:version => 20121106235918) do
 
   create_table "encuestas", :force => true do |t|
     t.string   "nombre"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(:version => 20121031235650) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  create_table "preguntas", :force => true do |t|
+    t.integer  "encuesta_id"
+    t.text     "descripcion"
+    t.integer  "tipo_pregunta_id"
+    t.integer  "position"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "preguntas", ["encuesta_id"], :name => "index_preguntas_on_encuesta_id"
+  add_index "preguntas", ["position"], :name => "index_preguntas_on_position"
+  add_index "preguntas", ["tipo_pregunta_id"], :name => "index_preguntas_on_tipo_pregunta_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
